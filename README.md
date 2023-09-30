@@ -122,7 +122,7 @@ static void *stbi__load_gif_main_outofmem(stbi__gif *g, stbi_uc *out, int **dela
 
 ​	The environment is shown below.
 
-![image-20230913154142754](C:\Users\hp\AppData\Roaming\Typora\typora-user-images\image-20230913154142754.png)
+![image-20230913154142754](https://github.com/peccc/double-stb/blob/master/image/1.png)
 
 ​	In the "example" folder, use the following command.
 
@@ -136,7 +136,7 @@ static void *stbi__load_gif_main_outofmem(stbi__gif *g, stbi_uc *out, int **dela
 ./example sample
 ```
 
-![image-20230919175413413](C:\Users\hp\AppData\Roaming\Typora\typora-user-images\image-20230919175413413.png)
+![image-20230919175413413](https://github.com/peccc/double-stb/blob/master/image/2.png)
 
 ​	We can see the "core dumped".
 
@@ -148,11 +148,11 @@ static void *stbi__load_gif_main_outofmem(stbi__gif *g, stbi_uc *out, int **dela
 
 ​	The first time it is freed, realloc's size is 0.
 
-![image-20230913154810441](C:\Users\hp\AppData\Roaming\Typora\typora-user-images\image-20230913154810441.png)
+![image-20230913154810441](https://github.com/peccc/double-stb/blob/master/image/3.png)
 
 ​	For the second free, the free function frees the pointer again.
 
-![image-20230913154940588](C:\Users\hp\AppData\Roaming\Typora\typora-user-images\image-20230913154940588.png)
+![image-20230913154940588](https://github.com/peccc/double-stb/blob/master/image/4.png)
 
 ​	
 
