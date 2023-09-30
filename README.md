@@ -1,6 +1,6 @@
 ## Double free vulnerability in nothings/stb
 
-​	nothings, an image processing library, has a __double free__ vulnerability in the stbi__load_gif_main function. This function is called in stbi_load_gif_from_memory and is used to parse files in the gif image format.
+​	Nothings/stb(https://github.com/nothings/stb/blob/master/stb_image.h), an image processing library, has a __double free__ vulnerability in the  __stbi\_\_load_gif_main__ function. This function is called in __stbi_load_gif_from_memory__ and is used to parse files in the gif image format.
 
 ### Vulnerability causes
 
@@ -93,13 +93,13 @@ static void *stbi__load_gif_main(stbi__context *s, int **delays, int *x, int *y,
 }
 ```
 
-when stride*layer = 0, for example g.w,g.h or layer is 0, such a situation would arise。when out_size = 0,
+When stride*layer = 0, for example g.w,g.h or layer is 0, such a situation would arise. 
 
 ```c++
 *tmp = (stbi_uc*) STBI_REALLOC_SIZED( out, out_size, layers * stride );
 ```
 
-This function is equivalent to free, the "__out__" pointer is freed at this point.
+When out_size = 0, this function is equivalent to free, the "__out__" pointer is freed at this point.
 
 In this function, the "__out__" pointer is released a second time.
 
