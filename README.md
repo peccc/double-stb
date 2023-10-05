@@ -127,7 +127,7 @@ static void *stbi__load_gif_main_outofmem(stbi__gif *g, stbi_uc *out, int **dela
 
 ![image-20230913154142754](https://github.com/peccc/double-stb/blob/master/image/1.png)
 
-​	In the "example" folder, use the following command.
+​	In the "double_example" folder, use the following command.
 
 ```shell
 ./build.sh
