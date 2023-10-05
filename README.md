@@ -1,7 +1,10 @@
 ## Double free vulnerability in nothings/stb
 
-​	Nothings/stb(https://github.com/nothings/stb/blob/master/stb_image.h), an image processing library, has a __double free__ vulnerability in the  __stbi\_\_load_gif_main__ function. This function is called in __stbi_load_gif_from_memory__ and is used to parse files in the gif image format.
+​	Nothings/stb, an image processing library, has a __double free__ vulnerability in the  __stbi\_\_load_gif_main__ function, stb_image.h  2.28(https://github.com/nothings/stb/blob/master/stb_image.h). This function is called in __stbi_load_gif_from_memory__ and is used to parse files in the gif image format.
 
+### version
+
+​	The affected version of the product Nothings/stb is stb_image.h __2.28__.
 ### Vulnerability causes
 
 ​	The main implementation function of stbi_load_gif_from_memory is stbi__load_gif_main
